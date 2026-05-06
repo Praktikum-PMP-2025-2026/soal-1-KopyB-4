@@ -56,6 +56,7 @@ void printQueue(queue *q){
         printf("%s ", temp->ID);
         temp = temp->next;
     }
+    printf("\b");
     printf("\n");
 }
 
