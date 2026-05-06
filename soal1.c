@@ -76,6 +76,7 @@ int main(){
     queue *q = createQueue();
     int n;
     int temp = 0;
+    int waittime = 0;
     scanf("%d", &n);
 
     Pasien *data = (Pasien*)malloc(n*sizeof(Pasien));
@@ -91,13 +92,15 @@ int main(){
     printf("ORDER ");
     printQueue(q);
 
-    for (int i=0; i<n; i++){
+    for (int i=0; i<n-1; i++){
         int timedif = checktime(q);
         temp = temp + timedif;
+        waittime = waittime + temp;
+
     }
 
     printf("WAIT ");
-    printf("%d", temp);
+    printf("%d", waittime);
 
     return 0;
 }
