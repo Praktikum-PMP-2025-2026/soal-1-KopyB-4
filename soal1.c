@@ -50,15 +50,12 @@ void enqueue(queue *q, char* ID, int time){
     }
 }
 
+
 void printQueue(queue *q){
     Pasien *temp = q->front;
     while (temp != NULL) {
-        printf("%s", temp->ID);
+        printf(" %s", temp->ID);
         temp = temp->next;
-        if (temp!= NULL){
-            break;
-        }
-        printf(" ");
     }
     printf("\n");
 }
@@ -93,7 +90,7 @@ int main(){
         enqueue(q, data[i].ID, data[i].time);
     }
 
-    printf("ORDER ");
+    printf("ORDER");
     printQueue(q);
 
     for (int i=0; i<n-1; i++){
