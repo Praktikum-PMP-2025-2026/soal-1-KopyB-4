@@ -53,10 +53,13 @@ void enqueue(queue *q, char* ID, int time){
 void printQueue(queue *q){
     Pasien *temp = q->front;
     while (temp != NULL) {
-        printf("%s ", temp->ID);
+        printf("%s", temp->ID);
         temp = temp->next;
+        if (temp!= NULL){
+            break;
+        }
+        printf(" ");
     }
-    printf("\b\b");
     printf("\n");
 }
 
